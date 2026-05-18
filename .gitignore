@@ -3,3 +3,4 @@ practical/material
 practical/data
 practical/vendor
 .venv
+*.xcf
