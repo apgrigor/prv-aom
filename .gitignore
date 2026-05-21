@@ -3,4 +3,5 @@ practical/material
 practical/data
 practical/vendor
 .venv
+guest
 *.xcf
