@@ -11,8 +11,8 @@ def signal_noise_ratio(s, a, b, ns):
     b2 = b ** 2
     ns2 = ns ** 2
     return np.sqrt(
-        (s2 + a2 / 12) / ns +
-        (8 * np.pi * s4 * b2) / (a2 * ns2)
+        (s2 + a2 / 12) / ns + #
+        (8 * np.pi * s4 * b2) / (a2 * ns2) #
     )
 
 # def fit(xs, ys) -> tuple[float,float,Any]:
@@ -68,6 +68,7 @@ def background_0(df: pd.DataFrame):
 
     ax.legend()
     fig.savefig("img/bkg_0.png")
+
 
 def localization_0(df: pd.DataFrame):
     xname = "intensity [photon]"
