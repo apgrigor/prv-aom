@@ -11,8 +11,8 @@ def signal_noise_ratio(s, a, b, ns):
     b2 = b ** 2
     ns2 = ns ** 2
     return np.sqrt(
-        (s2 + a2 / 12) / ns + #
-        (8 * np.pi * s4 * b2) / (a2 * ns2) #
+        + (s2 + a2 / 12) / ns 
+        + (8 * np.pi * s4 * b2) / (a2 * ns2)
     )
 
 # def fit(xs, ys) -> tuple[float,float,Any]:

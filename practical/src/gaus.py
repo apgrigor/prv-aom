@@ -28,7 +28,7 @@ class Conf:
         edgecolor = "white"
     )
     PlotKW = dict(
-        linewidth = 3,
+        linewidth = 1.5,
     )
 
 
@@ -54,8 +54,8 @@ def fit_gaussians(filenames: List[Path]) -> List[int]:
         ax.bar(
             xs, ys,
             width = 0.9 * (xs[1] - xs[0]),
-            color = "gray",
-            alpha = 0.7,
+            color = "orange",
+            # alpha = 0.7,
             label = "experiment",
             **Conf.BarKW
         )
@@ -80,8 +80,9 @@ def fit_gaussians(filenames: List[Path]) -> List[int]:
 
         ax.plot(
             gaus_xs, gaus_ys,
-            color = "dodgerblue",
-            label = "fit"
+            color = "darkblue",
+            label = "fit",
+            **Conf.PlotKW
         )
 
         ax.legend()
@@ -100,3 +101,23 @@ if __name__ == "__main__":
     # print(dys0)
     print(f"dx: {np.mean(dxs0):.2f}, {np.std(dxs0):.2f}")
     print(f"dy: {np.mean(dys0):.2f}, {np.std(dys0):.2f}")
+
+
+(s**2 + 2rs) / sqrt(s**2 + r**2 + 2rs)
+(s**2 + 2rs) / (s + r)
+    # Brightfield
+    > (s**2 + 2s) / (s + 1)
+    ~ 2s / (s + 1)
+    # Darkfield
+    > s**2 / s
+    ~ s
+    # iSCAT
+    > (s + 2r) / (s + r) / s
+
+# (2s + 2r) ds / (s**2 + r**2 + 2rs)
+#     = 2 (s + r) ds / (s + r) ** 2
+#     = 2 ds / (s + r)
+# 
+#     > 2 ds / (s + 1) # Brightfield
+#     > 2 ds / s       # Darkfield
+#     > 2 ds / (s + r) # iSCAT
